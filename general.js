@@ -1,7 +1,7 @@
-let level = 0;
+let level = 6;
 
 const phase = new Phase(level);
-const timer = new Timer(25);
+const timer = new Timer(2);
 //var timerValue = 25;
 
 
@@ -24,6 +24,7 @@ function setup() {
 function draw() {
     if (level === 0) {
         background(color(250, 250, 250));
+        image(borderImg, 0, 0, 800, 650);
         if (keyCode === 32) level += 1
 
     } else {

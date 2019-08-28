@@ -19,14 +19,14 @@ class Timer {
     draw() {
         //background(250);
         if (this.timerValue >= 10) {
-            text(this.timerValue, width / 2, 90);
+            text(this.timerValue, 425, 72);
         }
         if (this.timerValue < 10) {
-            text(this.timerValue, width / 2, 90);
+            text(this.timerValue, 440, 72);
         }
         if (this.timerValue == 0) {
             // text('game over', width / 2, height / 2 + 15);
-            image(this.img, 550, 200, 90, 115);
+            image(this.img, 550, 175, 90, 115);
             this.timeOver = false;
         }
     }

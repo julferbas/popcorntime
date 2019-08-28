@@ -1,6 +1,6 @@
 class Bucket {
     constructor() {
-        this.x = 475;
+        this.x = 450;
         this.y = 335;
         this.width = 300;
         this.height = 300;

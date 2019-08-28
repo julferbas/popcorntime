@@ -11,7 +11,7 @@ class Phase {
         for (let j = 0; j < 7; j++) {
             for (let i = 0; i < 7; i++) {
                 if (random() < 0.5 && this.corn.length < 7 * this.level) {
-                    this.corn.push(new Corn(500 + i * 34, 45 + j * 40))
+                    this.corn.push(new Corn(470 + i * 34, 100 + j * 40))
                 }
 
             }

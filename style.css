@@ -8,8 +8,8 @@ html, body {
 
 body {
     height: 100%;
-    background-image: url(../Imagens/background-cinza.png);
-    background-size: 300px;
+    background-image: url(Imagens/Escolhidas/background-cinza.png);
+    background-size: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
