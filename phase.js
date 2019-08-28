@@ -1,5 +1,5 @@
 class Phase {
-    constructor(level = 1) {
+    constructor(level) {
         this.level = level;
     }
     preload() {

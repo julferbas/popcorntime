@@ -1,5 +1,6 @@
-const phase = new Phase(4);
-const timer = new Timer(2);
+let startScreen = true;
+const phase = new Phase(1);
+const timer = new Timer(10);
 
 
 function preload() {
@@ -17,12 +18,12 @@ function setup() {
 
 
 function draw() {
-    if (phase.level === 0) {
+    if (startScreen && phase.level === 1) {
         background(color(250, 250, 250));
         image(borderImg, 0, 0, 800, 650);
-        if (keyCode === 32) level += 1
+        if (keyCode === 32) startScreen = false
 
-    } else {
+    } else if (phase.level === 1) {
         background(color(250, 250, 250));
         image(borderImg, 0, 0, 800, 650);
         phase.draw();

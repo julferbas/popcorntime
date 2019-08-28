@@ -38,7 +38,7 @@ class Corn {
         image(this.image, this.x, this.y, this.width, this.height);
         if (this.falling === true) {
             if (this.y < 355) {
-                this.y += 2;
+                this.y += 3;
             } else {
                 this.y = 900;
             }
@@ -54,21 +54,6 @@ class Corn {
             this.falling = true;
         }
 
-
-        // } else {
-        //     this.image = this.corn;
-        // }
-
-        // function mouseClicked() {
-        //     if (mouseX >= this.x && mouseX <= this.x + 40 &&
-        //         mouseY >= this.y && mouseX <= this.x + 40) {
-        //         image(this.pipoca, this.x, this.y, this.width, this.height);
-        //         console.log("clicked");
-        //     } else {
-        //         image(this.corn, this.x, this.y, this.width, this.height)
-        //     }
-
-        // }
 
     }
 }    
