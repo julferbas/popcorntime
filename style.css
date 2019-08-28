@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0
+}
+html, body {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: url(../Imagens/background-cinza.png);
+    background-size: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.img {
+    width: 400px;
+    height: 650px;
+    background-color: rgba(139, 0, 0, 0.445);
+    color: white;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.486);
+    color:rgb(184, 182, 182);
+    text-align: center;
+}
+
