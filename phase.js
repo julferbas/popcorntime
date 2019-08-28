@@ -1,13 +1,23 @@
 class Phase {
     constructor(level) {
         this.level = level;
+        this.trigger = true;
+        this.win = false;
     }
     preload() {
         this.bucket = new Bucket();
         this.bucket.preload();
 
-        this.corn = [];
+        this.winScreen = loadImage("Imagens/Escolhidas/ready-04.png");
 
+        this.corn = [];
+        if (this.trigger) {
+            this.createPopcorn();
+        }
+
+    }
+
+    createPopcorn() {
         for (let j = 0; j < 7; j++) {
             for (let i = 0; i < 7; i++) {
                 if (random() < 0.5 && this.corn.length < 7 * this.level) {
@@ -16,11 +26,21 @@ class Phase {
 
             }
         }
-
-
         this.corn.forEach(function (corn) {
             corn.preload();
         })
+        this.trigger = false
+    }
+
+    next() {
+        if (this.level < 2) {
+            this.level++;
+            this.corn = [];
+            this.createPopcorn();
+            // this.bucket.clearBucket();
+        } else {
+            this.win = true;
+        }
     }
 
     setup() {
@@ -32,10 +52,14 @@ class Phase {
     }
 
     draw() {
-        this.corn.forEach(function (corn) {
-            corn.draw();
-        })
-        this.bucket.draw();
+        if (this.win === true) {
+            image(this.winScreen, 460, 160, 276, 360);
+        } else {
+            this.corn.forEach(function (corn) {
+                corn.draw();
+            })
+            this.bucket.draw();
+        }
     }
 
     mouseClicked() {

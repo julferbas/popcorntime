@@ -1,10 +1,11 @@
 let startScreen = true;
 const phase = new Phase(1);
-const timer = new Timer(10);
+const timer = new Timer(25);
 
 
 function preload() {
-    borderImg = loadImage("Imagens/Escolhidas/arte-02.png");
+    borderImg = loadImage("Imagens/Escolhidas/border.png");
+    startImg = loadImage("Imagens/Escolhidas/start.png");
     phase.preload();
     timer.preload();
 }
@@ -21,9 +22,13 @@ function draw() {
     if (startScreen && phase.level === 1) {
         background(color(250, 250, 250));
         image(borderImg, 0, 0, 800, 650);
-        if (keyCode === 32) startScreen = false
+        image(startImg, 460, 160, 276, 360);
+        if (keyCode === 32) {
+            startScreen = false;
+            timer.resetTimer();
+        }
 
-    } else if (phase.level === 1) {
+    } else {
         background(color(250, 250, 250));
         image(borderImg, 0, 0, 800, 650);
         phase.draw();
@@ -31,12 +36,15 @@ function draw() {
         if (phase.phaseOver === true) {
             timer.resetTimer();
             phase.phaseOver = false;
+            phase.trigger = true;
+            phase.next();
+            //phase.level = 2;
+            //phase.createPopcorn();
+        }
+        if (phase.win === true) {
+            timer.stop();
         }
     }
-
-
-
-
 }
 
 function mouseClicked() {
@@ -46,13 +54,8 @@ function mouseClicked() {
 }
 
 
-
-
 function timeIt() {
     timer.timeIt();
 };
 
 
-// function resetTimer() {
-//     if (corn.)
-// }

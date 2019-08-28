@@ -6,27 +6,25 @@ class Timer {
     }
 
     preload() {
-        this.img = loadImage("Imagens/Escolhidas/gameover-03.png")
+        this.img = loadImage("Imagens/Escolhidas/game-over-04.png")
     }
 
     setup() {
-        //createCanvas(100, 100);
         textSize(40);
         fill(250);
-        setInterval(timeIt, 1000);
+        this.clock = setInterval(timeIt, 1000);
     }
 
     draw() {
-        //background(250);
         if (this.timerValue >= 10) {
-            text(this.timerValue, 425, 72);
+            text(this.timerValue, 415, 73);
         }
         if (this.timerValue < 10) {
-            text(this.timerValue, 440, 72);
+            text(this.timerValue, 430, 73);
         }
         if (this.timerValue == 0) {
             // text('game over', width / 2, height / 2 + 15);
-            image(this.img, 550, 175, 90, 115);
+            image(this.img, 490, 160, 204, 270);
             this.timeOver = false;
         }
     }
@@ -39,6 +37,10 @@ class Timer {
 
     resetTimer() {
         this.timerValue = this.originalTimerValue;
+    }
+
+    stop() {
+        clearInterval(this.clock);
     }
 
 }

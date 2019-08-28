@@ -1,9 +1,9 @@
 class Bucket {
     constructor() {
         this.x = 450;
-        this.y = 335;
-        this.width = 300;
-        this.height = 300;
+        this.y = 325;
+        this.width = 295;
+        this.height = 295;
 
     }
 
@@ -22,6 +22,10 @@ class Bucket {
 
     changeBucket() {
         this.bucket = this.fullBucket;
+    }
+
+    clearBucket() {
+        this.bucket = this.emptyBucket;
     }
 
 }
