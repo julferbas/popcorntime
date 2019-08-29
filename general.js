@@ -23,7 +23,7 @@ function draw() {
         background(color(250, 250, 250));
         image(borderImg, 0, 0, 800, 650);
         image(startImg, 460, 160, 276, 360);
-        if (keyCode === 32) {
+        if (keyCode === 13) {
             startScreen = false;
             timer.resetTimer();
         }
