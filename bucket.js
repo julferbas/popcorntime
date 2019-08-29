@@ -1,9 +1,9 @@
 class Bucket {
     constructor() {
         this.x = 450;
-        this.y = 325;
+        this.y = 355;
         this.width = 295;
-        this.height = 295;
+        this.height = 270;
 
     }
 

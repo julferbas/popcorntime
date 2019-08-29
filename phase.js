@@ -21,7 +21,7 @@ class Phase {
         for (let j = 0; j < 7; j++) {
             for (let i = 0; i < 7; i++) {
                 if (random() < 0.5 && this.corn.length < 7 * this.level) {
-                    this.corn.push(new Corn(470 + i * 34, 100 + j * 40))
+                    this.corn.push(new Corn(470 + i * 32, 100 + j * 30))
                 }
 
             }
@@ -33,7 +33,7 @@ class Phase {
     }
 
     next() {
-        if (this.level < 2) {
+        if (this.level < 5) {
             this.level++;
             this.corn = [];
             this.createPopcorn();
@@ -53,7 +53,7 @@ class Phase {
 
     draw() {
         if (this.win === true) {
-            image(this.winScreen, 460, 160, 276, 360);
+            image(this.winScreen, 428, 130, 340, 450);
         } else {
             this.corn.forEach(function (corn) {
                 corn.draw();
